@@ -13,12 +13,12 @@ MongoClient.connect('mongodb://carolyfisher:2tz87aav@ds153845.mlab.com:53845/fri
   if (err) return console.log(err);
   db = database;
   app.listen(3000, function(){
-    console.log('listening on 3000'); 
-  }); 
+    console.log('listening on 3000');
+  });
 });
 
-var counter = 0; 
-var score= 0; 
+var counter = 0;
+var score= 0;
  var codes = ["50277815", "16947494", "16947221", "50220026", "15290541", "10805587", "538637", "16945587", "14510593", "51118013", "93505", "16346820", "50679552", "15600111", "51242317", "51372132", "16797418", "51372269", "51237142", "49163945", "16772758", "17294692", "50076491", "21500107", "51204503", "46790692", "13066108", "50225542", "51324416", "50487110", "50730385", "15324510", "17078499", "50867137", "47114331", "16851781", "50887044", "13304816"];
 app.set('view engine', 'pug');
 app.get('/', function(req, res){
@@ -41,14 +41,19 @@ app.post('/submit', function(req, res) {
     guess = req.body.guess;
     price = req.body.price;
     imgurl = req.body.imgurl;
-    points = Math.round( guess/price * 100);
-    if (counter < 10){
-        if (guess > price){
-            points = 0;
-        } else{
-            score += points; 
-        }
+    if (guess > price){
+        points = 0;
+    } else{
+        points = Math.round( guess/price * 100);
+        score += points;
+    }
+    if (counter < 11){
         var results = "You guessed " + guess + ", the price was " + price + " and you earned " + points + " points for a total of " + score;
-        res.render('index', {results: results, imgurl: imgurl});
+        res.render('index', {name:"",results: results, imgurl: imgurl});
+    } else {
+      counter = 0;
+      res.render('results', {score: score});
+      points = 0;
+      score = 0;
     }
 });
