@@ -1,18 +1,22 @@
 body {
   display:flex;
-  justify-content:center;
   align-items:center;
 }
 
 h1 {
   font-family:"Montserrat";
   font-size:100px;
-  margin:10px;
+  margin:5px;
 }
 h2 {
   font-family:"Montserrat";
   font-size:50px;
-  margin:10px;
+  margin:5px;
+}
+h3 {
+  font-family:"Montserrat";
+  font-size:30px;
+  margin:5px;
 }
 
 input {
@@ -42,6 +46,7 @@ button {
   border: none;
   color:#fff;
   background-color:#000;
+  margin:20px;
 }
 
 #main {
