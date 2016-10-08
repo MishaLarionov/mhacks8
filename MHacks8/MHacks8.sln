@@ -1,0 +1,23 @@
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2008
+
+Project("{2068BE53-625E-6CC5-71BA-2C0A0EF2EEDB}") = "MHacks8", "Assembly-CSharp.csproj", "{38B96103-C237-021E-57E1-C973ADAFA8DB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{38B96103-C237-021E-57E1-C973ADAFA8DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{38B96103-C237-021E-57E1-C973ADAFA8DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{38B96103-C237-021E-57E1-C973ADAFA8DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{38B96103-C237-021E-57E1-C973ADAFA8DB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = Assembly-CSharp.csproj
+	EndGlobalSection
+EndGlobal
