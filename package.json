@@ -12,10 +12,12 @@
   "dependencies": {
     "body-parser": "^1.15.2",
     "express": "^4.14.0",
+    "http": "0.0.0",
+    "mongodb": "^2.2.10",
+    "node-rest-client": "^2.0.1",
     "pug": "^2.0.0-beta5"
   },
   "devDependencies": {
     "nodemon": "^1.10.0"
   }
 }
-
