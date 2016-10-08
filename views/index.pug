@@ -1,0 +1,21 @@
+
+doctype html
+html(lang='en')
+
+  head
+    meta(name='theme-color', content='#CC0000')
+    meta(name='apple-mobile-web-app-status-bar-style', content='#CC0000')
+
+    link(href='https://fonts.googleapis.com/css?family=Roboto', rel='stylesheet', type='text/css')
+    link(href='https://fonts.googleapis.com/css?family=Montserrat', rel='stylesheet', type='text/css')
+    link(href='styles.css', rel='stylesheet', type='text/css')
+
+  body
+    #main
+        h2=name
+        img(src=imgurl)
+        form(action = '/submit', method = 'post' id = 'guess')
+            input(placeholder="Your guess here" name='guess' pattern="[0-9]+" id="price-input") 
+            button(type='submit')=button
+        
+        h1=score
