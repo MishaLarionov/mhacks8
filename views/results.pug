@@ -4,20 +4,13 @@ html(lang='en')
   head
     meta(name='theme-color', content='#CC0000')
     meta(name='apple-mobile-web-app-status-bar-style', content='#CC0000')
-
     link(href='https://fonts.googleapis.com/css?family=Roboto', rel='stylesheet', type='text/css')
     link(href='https://fonts.googleapis.com/css?family=Montserrat', rel='stylesheet', type='text/css')
     link(href='styles.css', rel='stylesheet', type='text/css')
     script(type='text/javascript').
         setTimeout(function(){
             window.location = '/';
-        }, 20000)
-            if (document.location.href == "http://localhost:3000/submit"){
-                setTimeout(function(){
-                    window.location = '/';
-                }, 5000)
-            }
-
+        }, 20000);
 
   body
     #main
