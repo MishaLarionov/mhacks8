@@ -31,26 +31,6 @@ html(lang='en')
                 window.location = '/';
             }, 20000);
         }
-  body
-    #main
-        h2=name
-        img(src=imgurl)
-        form(action = action, method = 'post' id = 'guess')
-            unless disabled
-              input(placeholder="Your guess here" name='guess' pattern="[0-9]+" id="price-input")
-            input(type="hidden" name="price" value=price)
-            input(type="hidden" name="imgurl" value=imgurl)
-            button(type="submit") Next
-            
-        setTimeout(function(){
-            window.location = '/';
-        }, 20000)
-            if (document.location.href == "http://localhost:3000/submit"){
-                setTimeout(function(){
-                    window.location = '/';
-                }, 5000)
-            }
-
 
     body
         button#quickstart-sign-in.mdl-button.mdl-js-button.mdl-button--raised(name='signin') Sign in
@@ -63,7 +43,7 @@ html(lang='en')
                 input(type="hidden" name="imgurl" value=imgurl)
                 button(type="submit") Next
 
-        p=results
+            div=results
         .quickstart-user-details-container
             | Firebase sign-in status: 
             span#quickstart-sign-in-status Unknown
