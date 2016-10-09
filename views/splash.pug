@@ -8,9 +8,14 @@ html(lang='en')
         link(href='https://fonts.googleapis.com/css?family=Roboto', rel='stylesheet', type='text/css')
         link(href='https://fonts.googleapis.com/css?family=Montserrat', rel='stylesheet', type='text/css')
         link(href='styles.css', rel='stylesheet', type='text/css')
+        style.
+            #main {
+                display:flex;
+                justify-content:center;
+                flex-direction: column;
+            }
     body
         #main
-            h2 Welcome to THE PRICE IS ON TARGET
+            img(src="https://cdn.discordapp.com/attachments/225080502397173761/234428765365600258/ontarget.gif")
             form(action = "?start=1", method = 'post' id = 'guess')
                 button(type="submit") Next
-            div=results

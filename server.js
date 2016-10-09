@@ -29,20 +29,21 @@ app.get('/', function(req, res){
         score = 0;
     } else if (counter == 0 && !req.query.start) {
         res.render('splash');
+    } else {
+        counter++;
+        console.log(counter);
+        var tcin = codes[Math.floor(Math.random() * codes.length)];
+        restclient.get("https://api.target.com/products/v3/" + tcin + "?id_type=tcin&fields=pricing&key=3fa81a61d543037098387d0ba9ce4c36aad4a2e5", function (data, response) {
+            var name = data.product_composite_response.items[0].general_description;
+            var imgurl = "http://scene7.targetimg1.com/is/image/Target/" + tcin + "?wid=450&hei=450&fmt=pjpeg";
+            var price = Math.round(data.product_composite_response.items[0].online_price.current_price);
+            res.render('index', {name: name, imgurl: imgurl, price: price, action: "submit", disabled: false});
+        });
     }
-    counter++;
-    console.log(counter);
-    var tcin = codes[Math.floor(Math.random() * codes.length)];
-    restclient.get("https://api.target.com/products/v3/" + tcin + "?id_type=tcin&fields=pricing&key=3fa81a61d543037098387d0ba9ce4c36aad4a2e5", function (data, response) {
-        var name = data.product_composite_response.items[0].general_description;
-        var imgurl = "http://scene7.targetimg1.com/is/image/Target/" + tcin + "?wid=450&hei=450&fmt=pjpeg";
-        var price = Math.round(data.product_composite_response.items[0].online_price.current_price);
-        res.render('index', {name: name, imgurl: imgurl, price: price, action: "submit", disabled: false});
-    });
 });
 app.post('/', function(req, res){
     if (counter == 0 && !req.query.start) {
-      res.render('splash');
+        res.render('splash');
     } else {
         counter++;
         console.log(counter);
