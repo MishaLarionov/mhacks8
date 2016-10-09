@@ -38,12 +38,12 @@ app.use(express.static(__dirname + '/views'));
 app.use(bodyParser.urlencoded({extended: true}));
 
 app.post('/submit', function(req, res) {
-    guess = req.body.guess;
-    price = req.body.price;
+    guess = parseInt(req.body.guess);
+    price = parseInt(req.body.price);
     imgurl = req.body.imgurl;
     if (guess > price){
         points = 0;
-    } else{
+    } else {
         points = Math.round( guess/price * 100);
         score += points;
     }
