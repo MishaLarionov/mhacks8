@@ -1,27 +1,30 @@
 doctype html
 html(lang='en')
 
-  head
-    meta(name='theme-color', content='#CC0000')
-    meta(name='apple-mobile-web-app-status-bar-style', content='#CC0000')
+    head
+        meta(name='theme-color', content='#CC0000')
+        meta(name='apple-mobile-web-app-status-bar-style', content='#CC0000')
 
-    link(href='https://fonts.googleapis.com/css?family=Roboto', rel='stylesheet', type='text/css')
-    link(href='https://fonts.googleapis.com/css?family=Montserrat', rel='stylesheet', type='text/css')
-    link(href='styles.css', rel='stylesheet', type='text/css')
-    script(type='text/javascript').
-        setTimeout(function(){
-            window.location = '/';
-        }, 20000)
-            if (document.location.href == "http://localhost:3000/submit"){
-                setTimeout(function(){
-                    window.location = '/';
-                }, 5000)
-            }
+        link(href='https://fonts.googleapis.com/css?family=Roboto', rel='stylesheet', type='text/css')
+        link(href='https://fonts.googleapis.com/css?family=Montserrat', rel='stylesheet', type='text/css')
+        link(href='styles.css', rel='stylesheet', type='text/css')
+        script(type='text/javascript').
+            setTimeout(function(){
+                window.location = '/';
+            }, 20000)
+                if (document.location.href == "http://localhost:3000/submit" || document.location.href = "http://localhost:3000/leaderboard"){
+                    setTimeout(function(){
+                        window.location = '/';
+                    }, 4000)
+                }
 
 
-  body
-    #main
-        h1="FINAL SCORE"
-        h2=score
-        form(action = "/", method = 'post' id = 'guess')
-            button(type="submit") Play again
+    body
+        #main
+            h1="FINAL SCORE"
+            h2=score
+            form(action = "/leaderboard", method = 'post' id = 'guess')
+                input(type="hidden" name="score" value=score)
+                input(placeholder="Your name here" name='name')
+                button(type="submit") Submit and play again!
+            h6=leaderboard
