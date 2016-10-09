@@ -1,47 +1,33 @@
 
 doctype html
 html(lang='en')
-    script(src='https://www.gstatic.com/firebasejs/3.4.1/firebase.js')
-    script.
-        // Initialize Firebase
-        var config = {
-        apiKey: "AIzaSyBZ-Yf-NP_gSj16lmNk6WL3wTfnHHRRk04",
-        authDomain: "challenge-ninja.firebaseapp.com",
-        databaseURL: "https://challenge-ninja.firebaseio.com",
-        storageBucket: "challenge-ninja.appspot.com",
-        messagingSenderId: "348191666052"
-        };
-        firebase.initializeApp(config);
-
     head
-    meta(name='theme-color', content='#CC0000')
-    meta(name='apple-mobile-web-app-status-bar-style', content='#CC0000')
+        meta(name='theme-color', content='#CC0000')
+        meta(name='apple-mobile-web-app-status-bar-style', content='#CC0000')
 
-    link(href='https://fonts.googleapis.com/css?family=Roboto', rel='stylesheet', type='text/css')
-    link(href='https://fonts.googleapis.com/css?family=Montserrat', rel='stylesheet', type='text/css')
-    link(href='styles.css', rel='stylesheet', type='text/css')
-    script(type='text/javascript').
+        link(href='https://fonts.googleapis.com/css?family=Roboto', rel='stylesheet', type='text/css')
+        link(href='https://fonts.googleapis.com/css?family=Montserrat', rel='stylesheet', type='text/css')
+        link(href='styles.css', rel='stylesheet', type='text/css')
+        script(type='text/javascript').
 
-        if (document.location.href == "http://localhost:3000/submit"){
-            setTimeout(function(){
-                window.location = '/';
-            }, 5000)
-        } else {
-            setTimeout(function(){
-                window.location = '/';
-            }, 20000);
-        }
-
+            if (document.location.href == "http://localhost:3000/submit"){
+                setTimeout(function(){
+                    window.location = '/';
+                }, 5000)
+            } else {
+                setTimeout(function(){
+                    window.location = '/';
+                }, 20000);
+            }
     body
         #main
             h2=name
             img(src=imgurl)
             form(action = action, method = 'post' id = 'guess')
-                input(placeholder="Your guess here" name='guess' pattern="[0-9]+" id="price-input" disabled=disabled)
+                unless disabled
+                    input(placeholder="Your guess here" name='guess' pattern="[0-9]+" id="price-input")
                 input(type="hidden" name="price" value=price)
                 input(type="hidden" name="imgurl" value=imgurl)
                 button(type="submit") Next
 
             div=results
-            div=leaderboard
-        
