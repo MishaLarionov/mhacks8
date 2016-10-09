@@ -24,9 +24,10 @@ input {
   margin:10px;
   resize: none;
   box-shadow: none;
-  line-height: 1.25em;
+  line-height: 2em;
   border: none;
   text-align:center;
+  transition: all 2s;
 }
 
 button {
@@ -41,7 +42,7 @@ button {
   border-radius: 0;
   border: none;
   color:#fff;
-  background-color:#000;
+  background-color:#cc0000;
 }
 
 #main {
@@ -67,8 +68,4 @@ p {
 
 img{
   opacity: .8;
-}
-
-#titanic {
-  float:none;
 }
