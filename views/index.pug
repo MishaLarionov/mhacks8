@@ -25,7 +25,7 @@ html(lang='en')
             img(src=imgurl)
             form(action = action, method = 'post' id = 'guess')
                 unless disabled
-                    input(placeholder="Your guess here" name='guess' pattern="[0-9]+" id="price-input")
+                    input(placeholder="Your guess here" autocomplete="off" required name='guess' pattern="[0-9]+" id="price-input")
                 input(type="hidden" name="price" value=price)
                 input(type="hidden" name="imgurl" value=imgurl)
                 button(type="submit") Next
