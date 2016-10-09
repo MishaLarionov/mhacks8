@@ -12,7 +12,7 @@ restclient = new restclient();
 MongoClient.connect('mongodb://carolyfisher:2tz87aav@ds153845.mlab.com:53845/friendpoints', function(err, database){
   if (err) return console.log(err);
   db = database;
-  app.listen(3000, function(){
+  app.listen(80, function(){
     console.log('listening on 80');
   });
 });
