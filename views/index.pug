@@ -24,8 +24,8 @@ html(lang='en')
     #main
         h2=name
         img(src=imgurl)
-        form(action = '/submit', method = 'post' id = 'guess')
-            input(placeholder="Your guess here" name='guess' pattern="[0-9]+" id="price-input") 
+        form(action = action, method = 'post' id = 'guess')
+            input(placeholder="Your guess here" name='guess' pattern="[0-9]+" id="price-input" disabled=disabled)
             input(type="hidden" name="price" value=price)
             input(type="hidden" name="imgurl" value=imgurl)
             button(type="submit") Next

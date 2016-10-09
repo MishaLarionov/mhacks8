@@ -1,6 +1,10 @@
 {
   "name": "thepriceisontarget",
   "version": "1.0.0",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:MishaLarionov/mhacks8.git"
+  },
   "description": "\"Because yaaaaaaaaaaaaaay\" ",
   "main": "index.js",
   "scripts": {
