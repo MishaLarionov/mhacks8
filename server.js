@@ -35,7 +35,7 @@ app.get('/', function(req, res){
         var name = data.product_composite_response.items[0].general_description;
         var imgurl = "http://scene7.targetimg1.com/is/image/Target/" + tcin + "?wid=450&hei=450&fmt=pjpeg";
         var price = Math.round(data.product_composite_response.items[0].online_price.current_price);
-        res.render('index', {name: name, imgurl: imgurl, price: price, action: "submit", disabled: "false"});
+        res.render('index', {name: name, imgurl: imgurl, price: price, action: "submit", disabled: false});
     });
 });
 app.post('/', function(req, res){
@@ -46,7 +46,7 @@ app.post('/', function(req, res){
         var name = data.product_composite_response.items[0].general_description;
         var imgurl = "http://scene7.targetimg1.com/is/image/Target/" + tcin + "?wid=450&hei=450&fmt=pjpeg";
         var price = Math.round(data.product_composite_response.items[0].online_price.current_price);
-        res.render('index', {name: name, imgurl: imgurl, price: price, action: "submit", disabled: "false"});
+        res.render('index', {name: name, imgurl: imgurl, price: price, action: "submit", disabled: false});
     });
 });
 app.use(express.static(__dirname + '/views'));
@@ -65,7 +65,7 @@ app.post('/submit', function(req, res) {
     }
     if (counter < 11){
         var results = "You guessed " + guess + ", the price was " + price + " and you earned " + points + " points for a total of " + score;
-        res.render('index', {name:"",results: results, imgurl: imgurl, action: "/", disabled: "true"});
+        res.render('index', {name:"",results: results, imgurl: imgurl, action: "/", disabled: true});
     } else {
       counter = 0;
       res.render('results', {score: score});
